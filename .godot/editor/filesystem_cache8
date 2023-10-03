@@ -1,15 +1,15 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1696326449
+::res://::1696326593
 icon.svg::CompressedTexture2D::9003497545269681658::1696250193::1696250200::1::::<><>::
 ::res://Scenes/::1696259958
 ::res://Scenes/Enemies/::1696260589
-ghost.tscn::PackedScene::8326260951227920065::1696260589::0::1::::<><>::res://Scripts/BasicEnemy.gd<>uid://c47ahucxvcb7o::::res://Sprites/tile_0121.png
-::res://Scenes/Levels/::1696260599
-world.tscn::PackedScene::2979692456322516584::1696260599::0::1::::<><>::uid://b2un2gfk3e4qy::::res://Scenes/Player/player.tscn<>uid://bibdqiudh1q8w::::res://Scenes/Mechanisms/chest.tscn<>uid://dqvkkinvlax7v::::res://Scenes/Enemies/ghost.tscn
+ghost.tscn::PackedScene::8326260951227920065::1696260589::0::1::::<><>::res://Scripts/BasicEnemy.gd<>uid://c47ahucxvcb7o
+::res://Scenes/Levels/::1696326475
+world.tscn::PackedScene::2979692456322516584::1696326475::0::1::::<><>::uid://b2un2gfk3e4qy::::res://Scenes/Player/player.tscn<>uid://bibdqiudh1q8w::::res://Scenes/Mechanisms/chest.tscn<>uid://dqvkkinvlax7v::::res://Scenes/Enemies/ghost.tscn
 ::res://Scenes/Mechanisms/::1696260589
-chest.tscn::PackedScene::2950206985461789272::1696260589::0::1::::<><>::uid://c7ipr145ydjkv::::res://Sprites/tile_0089.png<>res://Scripts/Chest.gd<>uid://dctgg5nqv8pbm::::res://Sprites/tile_0091.png
+chest.tscn::PackedScene::2950206985461789272::1696260589::0::1::::<><>::uid://c7ipr145ydjkv
 ::res://Scenes/Player/::1696260034
-player.tscn::PackedScene::4323644877698653068::1696260034::0::1::::<><>::res://Scripts/Player.gd<>uid://d1od1wrnwtfv5::::res://Sprites/tile_0087.png
+player.tscn::PackedScene::4323644877698653068::1696260034::0::1::::<><>::res://Scripts/Player.gd<>uid://d1od1wrnwtfv5
 ::res://Scripts/::1696260582
 BasicEnemy.gd::GDScript::-1::1696259739::0::1::::<>CharacterBody2D<>::
 Chest.gd::GDScript::-1::1696260582::0::1::::<>StaticBody2D<>::
@@ -149,4 +149,3 @@ tile_0130.png::CompressedTexture2D::824317327078176442::1696256654::1696256655::
 tile_0131.png::CompressedTexture2D::5564526669288781945::1696256654::1696256655::1::::<><>::
 ::res://Tilemaps/::1696256619
 tilemap_packed.png::CompressedTexture2D::8702414540464023763::1696256617::1696256619::1::::<><>::
-::res://TopDownShooter/::1696326432
