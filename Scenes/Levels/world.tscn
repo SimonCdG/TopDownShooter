@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://bipndm6qw2nb1"]
+
+[ext_resource type="PackedScene" uid="uid://b2un2gfk3e4qy" path="res://Scenes/Player/player.tscn" id="1_dicx0"]
+[ext_resource type="PackedScene" uid="uid://bibdqiudh1q8w" path="res://Scenes/Mechanisms/chest.tscn" id="2_30aeg"]
+[ext_resource type="PackedScene" uid="uid://dqvkkinvlax7v" path="res://Scenes/Enemies/ghost.tscn" id="3_6redl"]
+
+[node name="World" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_dicx0")]
+position = Vector2(129, 107)
+
+[node name="Chest" parent="." instance=ExtResource("2_30aeg")]
+position = Vector2(293, 57)
+
+[node name="Ghost" parent="." instance=ExtResource("3_6redl")]
+position = Vector2(51, 180)

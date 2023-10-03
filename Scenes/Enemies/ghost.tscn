@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dqvkkinvlax7v"]
+
+[ext_resource type="Script" path="res://Scripts/BasicEnemy.gd" id="1_uw1qi"]
+[ext_resource type="Texture2D" uid="uid://c47ahucxvcb7o" path="res://Sprites/tile_0121.png" id="2_y4m2k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n8eck"]
+size = Vector2(16, 15)
+
+[node name="Ghost" type="CharacterBody2D"]
+script = ExtResource("1_uw1qi")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_y4m2k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_n8eck")
