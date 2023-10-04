@@ -1,1 +1,9 @@
+res://Scenes/Projectiles/StraightProjectile.gd
+res://Scenes/Projectiles/bolt.tscn
 res://Scenes/Levels/world.tscn
+res://Scripts/Player.gd
+res://Scripts/World.gd
+res://Scripts/StraightProjectile.gd
+res://Scenes/Player/player.tscn
+res://Scripts/Chest.gd
+res://Scenes/Mechanisms/chest.tscn
