@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://c6uymdpww21vd"]
+
+[ext_resource type="Texture2D" uid="uid://cwhjqhpo3x8vf" path="res://Sprites/tile_0125.png" id="1_2v3rt"]
+[ext_resource type="Texture2D" uid="uid://c34cytothcip" path="res://Textures/white_glow.png" id="2_iaidu"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_klfp8"]
+radius = 3.0
+height = 12.0
+
+[node name="Torch" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_2v3rt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_klfp8")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+visible = false
+color = Color(0.85098, 0.780392, 0.239216, 1)
+texture = ExtResource("2_iaidu")
+texture_scale = 2.0

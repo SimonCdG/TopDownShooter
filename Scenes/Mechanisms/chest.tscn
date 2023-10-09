@@ -1,8 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://bibdqiudh1q8w"]
+[gd_scene load_steps=8 format=3 uid="uid://bibdqiudh1q8w"]
 
 [ext_resource type="Texture2D" uid="uid://c7ipr145ydjkv" path="res://Sprites/tile_0089.png" id="1_7bsfx"]
 [ext_resource type="Script" path="res://Scripts/Chest.gd" id="1_vdhlq"]
 [ext_resource type="Texture2D" uid="uid://dctgg5nqv8pbm" path="res://Sprites/tile_0091.png" id="2_pbuat"]
+[ext_resource type="Texture2D" uid="uid://k8y4q8ysl7p2" path="res://Textures/lil_star.png" id="4_y4cxi"]
+
+[sub_resource type="Curve" id="Curve_06pag"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.256757, 1), 0.0, 0.0, 0, 0, Vector2(0.837838, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.831579), -2.33684, 0.0, 0, 0]
+point_count = 4
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_axp2g"]
 size = Vector2(16, 14)
@@ -14,6 +19,25 @@ radius = 18.0
 script = ExtResource("1_vdhlq")
 openedChestSprite = ExtResource("2_pbuat")
 metadata/_edit_group_ = true
+
+[node name="StarParticles" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 12
+one_shot = true
+preprocess = 0.15
+explosiveness = 0.89
+lifetime_randomness = 0.45
+texture = ExtResource("4_y4cxi")
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 40.0
+initial_velocity_max = 50.0
+damping_min = 40.0
+damping_max = 50.0
+scale_amount_min = 0.8
+scale_amount_max = 1.4
+scale_amount_curve = SubResource("Curve_06pag")
+color = Color(0.984314, 0.972549, 0.6, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -1)
