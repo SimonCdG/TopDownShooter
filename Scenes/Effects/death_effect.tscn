@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://buvfie33fbql5"]
+
+[ext_resource type="Texture2D" uid="uid://cr0fb63ghxtj5" path="res://Textures/smoke.png" id="1_fa24k"]
+[ext_resource type="Script" path="res://Scripts/DeathEffect.gd" id="2_fbyg1"]
+
+[sub_resource type="Curve" id="Curve_lcpwo"]
+_data = [Vector2(0, 0.631579), 0.0, 0.88134, 0, 0, Vector2(0.413681, 0.936842), 0.359064, 0.359064, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_uufql"]
+offsets = PackedFloat32Array(0, 0.84058)
+colors = PackedColorArray(0.913725, 0.913725, 0.913725, 0.968627, 0.821789, 0.821789, 0.821789, 0)
+
+[node name="DeathEffect" type="CPUParticles2D"]
+emitting = false
+lifetime = 0.6
+one_shot = true
+explosiveness = 0.92
+lifetime_randomness = 0.1
+texture = ExtResource("1_fa24k")
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 30.0
+initial_velocity_max = 45.0
+damping_min = 40.0
+damping_max = 40.0
+angle_min = -15.0
+angle_max = 15.0
+scale_amount_max = 2.0
+scale_amount_curve = SubResource("Curve_lcpwo")
+color_ramp = SubResource("Gradient_uufql")
+script = ExtResource("2_fbyg1")

@@ -1,22 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://c6uymdpww21vd"]
+[gd_scene load_steps=5 format=3 uid="uid://psqaasf8sxu6"]
 
+[ext_resource type="PackedScene" uid="uid://bq8kyfdi2nqqf" path="res://Scenes/Mechanisms/item_container.tscn" id="1_0u74m"]
 [ext_resource type="Texture2D" uid="uid://cwhjqhpo3x8vf" path="res://Sprites/tile_0125.png" id="1_2v3rt"]
-[ext_resource type="Texture2D" uid="uid://c34cytothcip" path="res://Textures/white_glow.png" id="2_iaidu"]
+[ext_resource type="Script" path="res://Scripts/ItemContainer.gd" id="2_0botm"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_klfp8"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_53rd6"]
 radius = 3.0
-height = 12.0
+height = 14.0
 
-[node name="Torch" type="StaticBody2D"]
+[node name="Torch" instance=ExtResource("1_0u74m")]
+script = ExtResource("2_0botm")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("1_2v3rt")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CapsuleShape2D_klfp8")
-
-[node name="PointLight2D" type="PointLight2D" parent="."]
-visible = false
-color = Color(0.85098, 0.780392, 0.239216, 1)
-texture = ExtResource("2_iaidu")
-texture_scale = 2.0
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource("CapsuleShape2D_53rd6")
