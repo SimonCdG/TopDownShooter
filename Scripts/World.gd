@@ -10,4 +10,3 @@ func _on_player_bolt_fired(boltPosition, boltDirection):
 	bolt.position = boltPosition
 	bolt.rotation = boltDirection.angle()
 	bolt.direction = boltDirection
-	

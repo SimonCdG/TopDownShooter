@@ -1,7 +1,100 @@
-[gd_scene load_steps=8 format=3 uid="uid://b2un2gfk3e4qy"]
+[gd_scene load_steps=15 format=3 uid="uid://b2un2gfk3e4qy"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_wk14x"]
+[ext_resource type="Script" path="res://Scenes/Player/MeleeWeapon.gd" id="2_0eknj"]
 [ext_resource type="Texture2D" uid="uid://d1od1wrnwtfv5" path="res://Sprites/tile_0087.png" id="2_eklvq"]
+[ext_resource type="Texture2D" uid="uid://dkxtytbc6e6dk" path="res://Sprites/tile_0118.png" id="2_x7plf"]
+[ext_resource type="Texture2D" uid="uid://brgjwjaa4uo5n" path="res://Textures/slash.png" id="3_bfr8q"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_c51dx"]
+radius = 9.0
+height = 26.0
+
+[sub_resource type="Animation" id="Animation_rt544"]
+resource_name = "AxeSwing"
+length = 0.45
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AxeSprite/Slash:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.04, 0.12),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Hitbox:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.04, 0.12),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AxeSprite:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.03, 0.1, 0.19, 0.23),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [1.5708, 0.558505, 2.79253, 1.48353, 1.5708]
+}
+
+[sub_resource type="Animation" id="Animation_d3ijq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AxeSprite/Slash:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Hitbox:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AxeSprite:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.5708]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8gm08"]
+_data = {
+"MeleeSwing": SubResource("Animation_rt544"),
+"RESET": SubResource("Animation_d3ijq")
+}
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0q3oo"]
 radius = 8.0
@@ -12,7 +105,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/path = NodePath("WarriorSprite:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -24,7 +117,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:rotation")
+tracks/1/path = NodePath("WarriorSprite:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -39,7 +132,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/path = NodePath("WarriorSprite:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -51,7 +144,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:scale")
+tracks/1/path = NodePath("WarriorSprite:scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -69,7 +162,7 @@ step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/path = NodePath("WarriorSprite:rotation")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -81,7 +174,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:scale")
+tracks/1/path = NodePath("WarriorSprite:scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -101,7 +194,37 @@ _data = {
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_wk14x")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Axe" type="Area2D" parent="."]
+script = ExtResource("2_0eknj")
+damages = 7
+
+[node name="AxePivot" type="Marker2D" parent="Axe"]
+
+[node name="AxeSprite" type="Sprite2D" parent="Axe/AxePivot"]
+show_behind_parent = true
+rotation = 1.5708
+texture = ExtResource("2_x7plf")
+offset = Vector2(0, -10)
+
+[node name="Slash" type="Sprite2D" parent="Axe/AxePivot/AxeSprite"]
+visible = false
+show_behind_parent = true
+position = Vector2(-10, -9.99996)
+rotation = -1.5708
+texture = ExtResource("3_bfr8q")
+
+[node name="Hitbox" type="CollisionShape2D" parent="Axe"]
+position = Vector2(12, 0)
+shape = SubResource("CapsuleShape2D_c51dx")
+disabled = true
+
+[node name="WeaponAnimation" type="AnimationPlayer" parent="Axe"]
+root_node = NodePath("../AxePivot")
+libraries = {
+"": SubResource("AnimationLibrary_8gm08")
+}
+
+[node name="WarriorSprite" type="Sprite2D" parent="."]
 position = Vector2(0, 6)
 texture = ExtResource("2_eklvq")
 offset = Vector2(0, -7)
@@ -109,8 +232,12 @@ offset = Vector2(0, -7)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_0q3oo")
 
+[node name="AxeSwing" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
+
 [node name="FireBolt" type="Timer" parent="."]
-wait_time = 0.6
+wait_time = 0.7
 one_shot = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -120,4 +247,6 @@ libraries = {
 "": SubResource("AnimationLibrary_818py")
 }
 
+[connection signal="body_entered" from="Axe" to="Axe" method="_on_body_entered"]
+[connection signal="timeout" from="AxeSwing" to="." method="_on_axe_swing_timeout"]
 [connection signal="timeout" from="FireBolt" to="." method="_on_fire_bolt_timeout"]

@@ -2,17 +2,22 @@
 
 [ext_resource type="PackedScene" uid="uid://bq8kyfdi2nqqf" path="res://Scenes/Mechanisms/item_container.tscn" id="1_0u74m"]
 [ext_resource type="Texture2D" uid="uid://cwhjqhpo3x8vf" path="res://Sprites/tile_0125.png" id="1_2v3rt"]
-[ext_resource type="Script" path="res://Scripts/ItemContainer.gd" id="2_0botm"]
+[ext_resource type="Texture2D" uid="uid://c34cytothcip" path="res://Textures/white_glow.png" id="2_46uu3"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_53rd6"]
 radius = 3.0
 height = 14.0
 
 [node name="Torch" instance=ExtResource("1_0u74m")]
-script = ExtResource("2_0botm")
 
-[node name="Sprite2D" parent="." index="0"]
+[node name="PointLight2D" type="PointLight2D" parent="." index="0"]
+visible = false
+color = Color(1, 0.662745, 0.160784, 1)
+texture = ExtResource("2_46uu3")
+texture_scale = 2.0
+
+[node name="Sprite2D" parent="." index="1"]
 texture = ExtResource("1_2v3rt")
 
-[node name="CollisionShape2D" parent="." index="1"]
+[node name="CollisionShape2D" parent="." index="2"]
 shape = SubResource("CapsuleShape2D_53rd6")

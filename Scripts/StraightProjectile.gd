@@ -1,8 +1,8 @@
-extends Area2D
+extends Hitbox
 
 @export var speed: float
 @export var lifeTime: float
-@export var damage: int = 1
+@export var damages: int = 1
 
 var direction: Vector2 = Vector2.RIGHT
 
@@ -13,8 +13,7 @@ func _process(delta):
 	if lifeTime <= 0:
 		queue_free()
 
-
 func _on_body_entered(body):
 	if "hit" in body:
-		body.hit(position, damage)
+		damages_calculation(body, damages)
 	queue_free()
