@@ -1,13 +1,13 @@
 class_name Player
 extends CharacterBody2D
 
-@export var maxSpeed: float = 150 
 
 var direction: Vector2
-
-signal boltFired(position, Vector2)
 var canSwingAxe: bool = true
 var canFireBolt: bool = true
+
+@export var maxSpeed: float = 150
+
 @onready var sprite: Sprite2D = $WarriorSprite
 @onready var axe: Area2D = $Axe
 @onready var axePivot: Marker2D = $Axe/AxePivot
@@ -17,13 +17,15 @@ var canFireBolt: bool = true
 @onready var fireBoltTimer: Timer = $FireBolt
 @onready var animationPlayer: AnimationPlayer = $AnimationPlayer
 
+signal boltFired(position, Vector2)
+
 
 func _process(_delta):
 	
 	direction = Input.get_vector("left", "right", "up", "down")
 	
 	#Animate the Player
-	if direction.abs() != Vector2.ZERO:
+	if velocity.abs() != Vector2.ZERO:
 		animationPlayer.play("Walk")
 	else:
 		animationPlayer.play("Idle")

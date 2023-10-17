@@ -1,8 +1,10 @@
-res://Scenes/Weapons
+res://Scenes/UI
 res://Scripts
-res://Scenes/Effects
 res://Scenes/Mechanisms
+res://Tilemaps
 res://Scenes/Levels
+res://Scenes/Weapons
+res://Scenes/Effects
 res://Scenes/Projectiles
 res://Scenes
 res://Scenes/Player

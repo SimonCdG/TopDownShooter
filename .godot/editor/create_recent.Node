@@ -1,3 +1,12 @@
+AnimationPlayer
+ColorRect
+TextureRect
+CanvasLayer
+ProgressBar
+Control
+MarginContainer
+TextureProgressBar
+TileMap
 Area2D
 CollisionShape2D
 StaticBody2D
@@ -5,10 +14,8 @@ PointLight2D
 DirectionalLight2D
 Node2D
 Sprite2D
-AnimationPlayer
 Marker2D
 CPUParticles2D
-TileMap
 Camera2D
 Timer
 CharacterBody2D

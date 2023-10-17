@@ -15,6 +15,10 @@ run/main_scene="res://Scenes/Levels/outside.tscn"
 config/features=PackedStringArray("4.1", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+LevelTransition="*res://Scenes/UI/level_transition.tscn"
+
 [display]
 
 window/size/viewport_width=360
@@ -73,4 +77,4 @@ secondary_action={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
-renderer/rendering_method="mobile"
+renderer/rendering_method="gl_compatibility"

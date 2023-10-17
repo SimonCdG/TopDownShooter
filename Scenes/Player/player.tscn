@@ -96,8 +96,9 @@ _data = {
 "RESET": SubResource("Animation_d3ijq")
 }
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_0q3oo"]
-radius = 8.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rmuie"]
+radius = 5.0
+height = 14.0
 
 [sub_resource type="Animation" id="Animation_gcyq2"]
 resource_name = "Idle"
@@ -230,7 +231,7 @@ texture = ExtResource("2_eklvq")
 offset = Vector2(0, -7)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_0q3oo")
+shape = SubResource("CapsuleShape2D_rmuie")
 
 [node name="AxeSwing" type="Timer" parent="."]
 wait_time = 0.3

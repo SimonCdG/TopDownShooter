@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bipndm6qw2nb1"]
+[gd_scene load_steps=4 format=3 uid="uid://bipndm6qw2nb1"]
 
 [ext_resource type="Script" path="res://Scripts/World.gd" id="1_8vy4v"]
 [ext_resource type="PackedScene" uid="uid://b2un2gfk3e4qy" path="res://Scenes/Player/player.tscn" id="1_dicx0"]
+[ext_resource type="PackedScene" uid="uid://bn542q8plyel2" path="res://Scenes/UI/ui.tscn" id="3_5pafv"]
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_8vy4v")
@@ -9,13 +10,15 @@ script = ExtResource("1_8vy4v")
 [node name="Projectiles" type="Node2D" parent="."]
 
 [node name="Player" parent="." instance=ExtResource("1_dicx0")]
-position = Vector2(160, 120)
 collision_layer = 2
 collision_mask = 21
+metadata/_edit_group_ = true
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(1.2, 1.2)
 position_smoothing_enabled = true
 position_smoothing_speed = 7.0
+
+[node name="UI" parent="." instance=ExtResource("3_5pafv")]
 
 [connection signal="boltFired" from="Player" to="." method="_on_player_bolt_fired"]

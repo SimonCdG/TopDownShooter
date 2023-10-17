@@ -5,16 +5,16 @@ func damages_calculation(body, damagesDealt:int):
 	var baseDamages = damagesDealt
 	var diceRoll = randf()
 	if diceRoll < .1:
-		damagesDealt *= .5
+		damagesDealt = int(damagesDealt * 0.5)
 	elif diceRoll < .4:
-		damagesDealt *= .8
+		damagesDealt = int(damagesDealt * 0.8)
 	elif diceRoll < .7:
 		pass
 	elif diceRoll < .95:
-		damagesDealt *= 1.2
+		damagesDealt = int(damagesDealt * 1.2)
 	else:
 		damagesDealt *= 2
 		
-	body.hit(position, damagesDealt)
+	body.hit(global_position, damagesDealt)
 	print(damagesDealt)
 	damagesDealt = baseDamages

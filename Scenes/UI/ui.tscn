@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://bn542q8plyel2"]
+
+[ext_resource type="Texture2D" uid="uid://d2ita2i5f2yiu" path="res://UI/health_bar_bg.png" id="1_6itr6"]
+[ext_resource type="Texture2D" uid="uid://cfefekefr7cow" path="res://UI/health_bar_overlay.png" id="2_syj08"]
+[ext_resource type="Texture2D" uid="uid://bn7xnvvsaj4ej" path="res://UI/health_bar_progress.png" id="3_wt2gf"]
+
+[node name="UI" type="CanvasLayer"]
+
+[node name="HealthMargin" type="MarginContainer" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -32.0
+offset_top = -8.0
+offset_right = 32.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_bottom = 20
+
+[node name="HealthTexture" type="TextureProgressBar" parent="HealthMargin"]
+layout_mode = 2
+value = 100.0
+texture_under = ExtResource("1_6itr6")
+texture_over = ExtResource("2_syj08")
+texture_progress = ExtResource("3_wt2gf")
