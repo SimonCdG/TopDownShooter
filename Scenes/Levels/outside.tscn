@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cqutsfe1osyju"]
+[gd_scene load_steps=9 format=3 uid="uid://cqutsfe1osyju"]
 
 [ext_resource type="PackedScene" uid="uid://bipndm6qw2nb1" path="res://Scenes/Levels/world.tscn" id="1_31dkd"]
 [ext_resource type="Script" path="res://Scripts/Outside.gd" id="2_mm2ey"]
@@ -6,7 +6,6 @@
 [ext_resource type="TileSet" uid="uid://0oa7e3pl5ehv" path="res://Tilemaps/kenney.tres" id="4_d3tci"]
 [ext_resource type="PackedScene" uid="uid://bibdqiudh1q8w" path="res://Scenes/Mechanisms/chest.tscn" id="5_6heht"]
 [ext_resource type="PackedScene" uid="uid://bk2mv740f3uh7" path="res://Scenes/Mechanisms/gate.tscn" id="5_kmo8o"]
-[ext_resource type="PackedScene" uid="uid://tcnsy8gew343" path="res://Scenes/Levels/inside.tscn" id="6_sa5lq"]
 [ext_resource type="PackedScene" uid="uid://dp8gfqrvygif6" path="res://Scenes/Mechanisms/crate.tscn" id="7_dfkl2"]
 [ext_resource type="PackedScene" uid="uid://dqvkkinvlax7v" path="res://Scenes/Enemies/ghost.tscn" id="7_fw4nf"]
 
@@ -35,7 +34,7 @@ layer_1/tile_data = PackedInt32Array(-917495, 2, 6, -917494, 65538, 6, -917493, 
 [node name="Props" type="Node2D" parent="." index="2"]
 
 [node name="Gate" parent="Props" index="0" instance=ExtResource("5_kmo8o")]
-scene = ExtResource("6_sa5lq")
+scene = "res://Scenes/Levels/inside.tscn"
 
 [node name="Crate" parent="Props" index="1" instance=ExtResource("7_dfkl2")]
 position = Vector2(224, 112)

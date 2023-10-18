@@ -1,6 +1,6 @@
 extends Area2D
 
-@export var scene: PackedScene
+@export_file("*.tscn") var scene
 
 func _on_body_entered(body):
 	if "maxSpeed" in body:
