@@ -34,6 +34,7 @@ layer_1/tile_data = PackedInt32Array(-917495, 2, 6, -917494, 65538, 6, -917493, 
 [node name="Props" type="Node2D" parent="." index="2"]
 
 [node name="Gate" parent="Props" index="0" instance=ExtResource("5_kmo8o")]
+position = Vector2(168, -264)
 scene = "res://Scenes/Levels/inside.tscn"
 
 [node name="Crate" parent="Props" index="1" instance=ExtResource("7_dfkl2")]
