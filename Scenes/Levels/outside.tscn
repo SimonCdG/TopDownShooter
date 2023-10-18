@@ -6,7 +6,7 @@
 [ext_resource type="TileSet" uid="uid://0oa7e3pl5ehv" path="res://Tilemaps/kenney.tres" id="4_d3tci"]
 [ext_resource type="PackedScene" uid="uid://bibdqiudh1q8w" path="res://Scenes/Mechanisms/chest.tscn" id="5_6heht"]
 [ext_resource type="PackedScene" uid="uid://bk2mv740f3uh7" path="res://Scenes/Mechanisms/gate.tscn" id="5_kmo8o"]
-[ext_resource type="PackedScene" uid="uid://brj1x5aogrswf" path="res://Scenes/Levels/inside.tscn" id="6_sa5lq"]
+[ext_resource type="PackedScene" uid="uid://tcnsy8gew343" path="res://Scenes/Levels/inside.tscn" id="6_sa5lq"]
 [ext_resource type="PackedScene" uid="uid://dp8gfqrvygif6" path="res://Scenes/Mechanisms/crate.tscn" id="7_dfkl2"]
 [ext_resource type="PackedScene" uid="uid://dqvkkinvlax7v" path="res://Scenes/Enemies/ghost.tscn" id="7_fw4nf"]
 
@@ -51,3 +51,4 @@ position = Vector2(216, -152)
 
 [node name="Player" parent="." index="6"]
 position = Vector2(174, 128)
+collision_mask = 17

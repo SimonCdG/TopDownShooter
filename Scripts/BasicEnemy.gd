@@ -4,6 +4,7 @@ extends CharacterBody2D
 @export var maxSpeed: float = 50
 @export var health: int = 1
 @export var knockback: float = 30
+@export var damages: int = 1
 
 @onready var sprite = $Sprite2D
 @onready var deathScene: PackedScene = preload("res://Scenes/Effects/death_effect.tscn")
@@ -17,7 +18,7 @@ func _physics_process(delta):
 	velocity = direction * maxSpeed
 	move_and_slide()
 
-func hit(hitPosition, damage):
+func hit(hitPosition: Vector2, damage: int):
 	direction = (position - hitPosition).normalized() * knockback/10
 	
 	var tween = create_tween()

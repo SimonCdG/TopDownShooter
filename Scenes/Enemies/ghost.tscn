@@ -1,15 +1,23 @@
-[gd_scene load_steps=4 format=3 uid="uid://dqvkkinvlax7v"]
+[gd_scene load_steps=6 format=3 uid="uid://dqvkkinvlax7v"]
 
 [ext_resource type="Script" path="res://Scripts/BasicEnemy.gd" id="1_uw1qi"]
 [ext_resource type="Texture2D" uid="uid://c47ahucxvcb7o" path="res://Sprites/tile_0121.png" id="2_y4m2k"]
+[ext_resource type="PackedScene" uid="uid://bcr5glphs0om5" path="res://Scenes/Enemies/enemy_hitbox.tscn" id="3_0wqvg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n8eck"]
 size = Vector2(16, 15)
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3saxy"]
+radius = 5.0
+height = 14.0
+
 [node name="Ghost" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 9
 script = ExtResource("1_uw1qi")
 health = 10
 knockback = 80.0
+damages = 2
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -18,3 +26,11 @@ texture = ExtResource("2_y4m2k")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_n8eck")
+
+[node name="EnemyHitbox" parent="." instance=ExtResource("3_0wqvg")]
+
+[node name="CollisionShape2D" parent="EnemyHitbox" index="0"]
+position = Vector2(0, 1)
+shape = SubResource("CapsuleShape2D_3saxy")
+
+[editable path="EnemyHitbox"]

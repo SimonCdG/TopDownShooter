@@ -5,7 +5,7 @@ func damages_calculation(body, damagesDealt:int):
 	var baseDamages = damagesDealt
 	var diceRoll = randf()
 	if diceRoll < .1:
-		damagesDealt = int(damagesDealt * 0.5)
+		damagesDealt = int(damagesDealt * 0.6)
 	elif diceRoll < .4:
 		damagesDealt = int(damagesDealt * 0.8)
 	elif diceRoll < .7:
