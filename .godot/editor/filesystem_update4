@@ -1,15 +1,2 @@
-res://Tilemaps/kenney.tres
 res://Scenes/Raphael/raph_castle1.tscn
-res://Scenes/Mael/mael_castle1.tscn
-res://Scenes/Mechanisms/gate.tscn
-res://Scripts/LevelExit.gd
-res://Scenes/Levels/outside.tscn
-res://Scenes/Levels/inside.tscn
-res://Scripts/LevelTransition.gd
-res://Scenes/Levels/world.tscn
-res://Scenes/Player/player.tscn
-res://Scenes/UI/ui.tscn
-res://Scenes/UI/level_transition.tscn
-res://Scenes/Enemies/ghost.tscn
-res://Scenes/Projectiles/bolt.tscn
-res://Scenes/Enemies/enemy_hitbox.tscn
+res://Tilemaps/kenney.tres
