@@ -8,9 +8,8 @@ var canFireBolt: bool = true
 var canMove: bool = true
 
 @export var maxSpeed: float = 150
-@export var maxHealth: int = Globals.playerMaxHealth
+@export var maxHealth: int = 15
 @export var knockback: int = 20
-var health: int
 
 @onready var sprite: Sprite2D = $WarriorSprite
 @onready var axe: Area2D = $Axe
@@ -23,9 +22,10 @@ var health: int
 @onready var animationPlayer: AnimationPlayer = $AnimationPlayer
 
 signal boltFired(position, Vector2)
+signal healthUpdated()
 
-func _ready():
-	health = Globals.playerHealth
+func _init():
+	Globals.playerMaxHealth = maxHealth
 
 
 func _process(delta):
@@ -84,10 +84,12 @@ func hit(hitPosition: Vector2, damages: int):
 	var tween = create_tween()
 	tween.tween_property(sprite, "modulate", Color(1, 1, 1, 1), .2).from(Color(1, 0, 0, 1))
 	
-	health -= damages
-	print(health)
+	Globals.playerHealth -= damages
 	
-	if health <= 0:
+	healthUpdated.emit()
+	
+	if Globals.playerHealth <= 0:
+		Globals.playerHealth = Globals.playerMaxHealth
 		get_tree().reload_current_scene()
 
 

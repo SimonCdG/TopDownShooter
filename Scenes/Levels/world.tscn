@@ -19,6 +19,5 @@ position_smoothing_enabled = true
 position_smoothing_speed = 7.0
 
 [node name="UI" parent="." instance=ExtResource("3_5pafv")]
-visible = false
 
 [connection signal="boltFired" from="Player" to="." method="_on_player_bolt_fired"]

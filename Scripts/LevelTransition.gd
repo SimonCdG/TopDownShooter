@@ -1,6 +1,5 @@
 extends CanvasLayer
 
-
 func level_transition(target: String):
 	$AnimationPlayer.play("FadeToBlack")
 	await $AnimationPlayer.animation_finished

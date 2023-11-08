@@ -1,8 +1,8 @@
+AnimationPlayer
 TileMap
 CollisionShape2D
 Area2D
 Timer
-AnimationPlayer
 ColorRect
 TextureRect
 CanvasLayer
