@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://tcnsy8gew343"]
+[gd_scene load_steps=6 format=3 uid="uid://tcnsy8gew343"]
 
 [ext_resource type="PackedScene" uid="uid://bipndm6qw2nb1" path="res://Scenes/Levels/world.tscn" id="1_tq7ix"]
 [ext_resource type="TileSet" uid="uid://0oa7e3pl5ehv" path="res://Tilemaps/kenney.tres" id="2_nl46k"]
 [ext_resource type="PackedScene" uid="uid://bk2mv740f3uh7" path="res://Scenes/Mechanisms/gate.tscn" id="3_3gv5l"]
 [ext_resource type="PackedScene" uid="uid://d3kkqslureo1n" path="res://Scenes/Mechanisms/level_exit.tscn" id="3_66jd4"]
+[ext_resource type="PackedScene" uid="uid://dqvkkinvlax7v" path="res://Scenes/Enemies/ghost.tscn" id="4_hcd8b"]
 
 [node name="Inside" instance=ExtResource("1_tq7ix")]
 
@@ -36,5 +37,29 @@ monitorable = false
 position = Vector2(-344, -424)
 monitoring = false
 monitorable = false
+
+[node name="Ghost" parent="Enemies" index="0" instance=ExtResource("4_hcd8b")]
+position = Vector2(-48, -232)
+
+[node name="Ghost2" parent="Enemies" index="1" instance=ExtResource("4_hcd8b")]
+position = Vector2(64, -288)
+
+[node name="Ghost3" parent="Enemies" index="2" instance=ExtResource("4_hcd8b")]
+position = Vector2(-48, -304)
+
+[node name="Ghost4" parent="Enemies" index="3" instance=ExtResource("4_hcd8b")]
+position = Vector2(48, -432)
+
+[node name="Ghost5" parent="Enemies" index="4" instance=ExtResource("4_hcd8b")]
+position = Vector2(-56, -440)
+
+[node name="Ghost6" parent="Enemies" index="5" instance=ExtResource("4_hcd8b")]
+position = Vector2(-8, -472)
+
+[node name="Ghost7" parent="Enemies" index="6" instance=ExtResource("4_hcd8b")]
+position = Vector2(-352, -304)
+
+[node name="Ghost8" parent="Enemies" index="7" instance=ExtResource("4_hcd8b")]
+position = Vector2(-336, -384)
 
 [node name="LevelExit" parent="." index="6" instance=ExtResource("3_66jd4")]

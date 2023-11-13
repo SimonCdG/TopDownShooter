@@ -63,12 +63,14 @@ func _process(delta):
 		axeSwingTimer.start()
 	
 	#Fire a bolt
+	'''
 	if Input.is_action_pressed("secondary_action") && canFireBolt:
 		var mouseDirection = (get_global_mouse_position() - position).normalized()
 		boltFired.emit(position, mouseDirection)
 		canFireBolt = false
 		fireBoltTimer.start()
-
+	'''
+	
 func _physics_process(_delta):
 	
 	velocity = direction * maxSpeed

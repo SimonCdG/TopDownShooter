@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://b6iwvotfai4aj"]
+
+[ext_resource type="Script" path="res://Scripts/DroppedItems.gd" id="1_u5gix"]
+[ext_resource type="Texture2D" uid="uid://bu7gjwntacpuj" path="res://UI/DroppedItems/rupee_world.png" id="2_bces1"]
+[ext_resource type="Texture2D" uid="uid://c3ihyk6iw8cs2" path="res://UI/DroppedItems/heart_world.png" id="3_fuigc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ffo73"]
+radius = 5.0
+
+[node name="DroppedItems" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_u5gix")
+textures = Array[Texture]([ExtResource("2_bces1"), ExtResource("3_fuigc")])
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_bces1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ffo73")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
