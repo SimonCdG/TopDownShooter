@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://dhqdjwuowbkx1"]
+[gd_scene load_steps=9 format=3 uid="uid://dhqdjwuowbkx1"]
 
 [ext_resource type="Texture2D" uid="uid://data5utb8w1ai" path="res://Sprites/openable barrier.png" id="1_48gth"]
+[ext_resource type="Script" path="res://Scripts/Barriere.gd" id="1_bwdkt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jq5r5"]
 atlas = ExtResource("1_48gth")
@@ -47,10 +48,12 @@ animations = [{
 size = Vector2(16, 16)
 
 [node name="Barriere" type="Node2D"]
+script = ExtResource("1_bwdkt")
+trigger = 1000002
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_jvgng")
-animation = &"closed"
+animation = &"opened"
 
 [node name="Static" type="StaticBody2D" parent="."]
 

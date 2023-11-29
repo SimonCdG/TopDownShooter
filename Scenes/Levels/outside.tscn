@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cqutsfe1osyju"]
+[gd_scene load_steps=10 format=3 uid="uid://cqutsfe1osyju"]
 
 [ext_resource type="PackedScene" uid="uid://bipndm6qw2nb1" path="res://Scenes/Levels/world.tscn" id="1_31dkd"]
 [ext_resource type="Script" path="res://Scripts/Outside.gd" id="2_mm2ey"]
@@ -8,12 +8,13 @@
 [ext_resource type="PackedScene" uid="uid://bk2mv740f3uh7" path="res://Scenes/Mechanisms/gate.tscn" id="5_kmo8o"]
 [ext_resource type="PackedScene" uid="uid://dp8gfqrvygif6" path="res://Scenes/Mechanisms/crate.tscn" id="7_dfkl2"]
 [ext_resource type="PackedScene" uid="uid://dqvkkinvlax7v" path="res://Scenes/Enemies/ghost.tscn" id="7_fw4nf"]
+[ext_resource type="PackedScene" uid="uid://dhqdjwuowbkx1" path="res://Scenes/Mechanisms/barriere.tscn" id="9_882hh"]
 
 [node name="Outside" instance=ExtResource("1_31dkd")]
 script = ExtResource("2_mm2ey")
 
 [node name="Dirt" type="Sprite2D" parent="." index="0"]
-position = Vector2(40, 32)
+position = Vector2(-64, -8)
 texture = ExtResource("2_v8ki4")
 region_enabled = true
 region_rect = Rect2(0, 0, 2000, 2000)
@@ -52,3 +53,10 @@ position = Vector2(216, -152)
 [node name="Player" parent="." index="6"]
 position = Vector2(174, 128)
 collision_mask = 17
+
+[node name="Barriere" parent="." index="8" instance=ExtResource("9_882hh")]
+position = Vector2(168, -240)
+trigger = 2
+
+[connection signal="triggerSignal" from="Enemies/Ghost" to="Barriere" method="_on_ghost_trigger_signal"]
+[connection signal="triggerSignal" from="Enemies/Ghost2" to="Barriere" method="_on_ghost_trigger_signal"]

@@ -1,2 +1,9 @@
 res://Scenes/Levels/outside.tscn
 res://Tilemaps/kenney.tres
+res://Scripts/Barriere.gd
+res://Scenes/Levels/world.tscn
+res://Scenes/UI/ui.tscn
+res://Scenes/Mechanisms/dropped_items.tscn
+res://Scenes/Levels/inside.tscn
+res://Scenes/Raphael/raph_castle1.tscn
+res://Scenes/Mechanisms/barriere.tscn

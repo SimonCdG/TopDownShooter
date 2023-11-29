@@ -1,6 +1,8 @@
 class_name BasicEnemy
 extends CharacterBody2D
 
+signal triggerSignal
+
 @export var maxSpeed: float = 50
 @export var health: int = 1
 @export var knockback: float = 30
@@ -46,5 +48,7 @@ func hit(hitPosition: Vector2, damage: int):
 				itemDrop.call_deferred('determine_state', 0)
 			else:
 				itemDrop.call_deferred('determine_state', 1)
+		
+		triggerSignal.emit()
 		
 		queue_free()
