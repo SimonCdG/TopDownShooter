@@ -41,7 +41,7 @@ scene = "res://Scenes/Levels/inside.tscn"
 position = Vector2(224, 112)
 
 [node name="Chest" parent="Props" index="2" instance=ExtResource("5_6heht")]
-position = Vector2(168, -160)
+position = Vector2(176, -24)
 
 [node name="Ghost" parent="Enemies" index="0" instance=ExtResource("7_fw4nf")]
 position = Vector2(96, -184)

@@ -1,9 +1,2 @@
-res://Scenes/Raphael/raph_castle1.tscn
-res://Tilemaps/kenney.tres
-res://Scenes/Levels/world.tscn
 res://Scenes/Levels/outside.tscn
-res://Scenes/UI/ui.tscn
-res://Scenes/Mechanisms/dropped_items.tscn
-res://Scenes/Mechanisms/chest.tscn
-res://Scenes/Enemies/ghost.tscn
-res://Scenes/Levels/inside.tscn
+res://Tilemaps/kenney.tres

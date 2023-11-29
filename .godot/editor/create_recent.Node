@@ -1,7 +1,10 @@
+StaticBody2D
+CollisionShape2D
+AnimatedSprite2D
+Node
 Sprite2D
 Node2D
 Area2D
-CollisionShape2D
 Label
 Control
 TextureRect
@@ -13,7 +16,6 @@ CanvasLayer
 ProgressBar
 MarginContainer
 TextureProgressBar
-StaticBody2D
 PointLight2D
 DirectionalLight2D
 Marker2D

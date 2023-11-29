@@ -1,0 +1,68 @@
+[gd_scene load_steps=8 format=3 uid="uid://dhqdjwuowbkx1"]
+
+[ext_resource type="Texture2D" uid="uid://data5utb8w1ai" path="res://Sprites/openable barrier.png" id="1_48gth"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jq5r5"]
+atlas = ExtResource("1_48gth")
+region = Rect2(0, 0, 48, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w7u3r"]
+atlas = ExtResource("1_48gth")
+region = Rect2(0, 0, 48, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3e6t3"]
+atlas = ExtResource("1_48gth")
+region = Rect2(0, 16, 48, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x6pyf"]
+atlas = ExtResource("1_48gth")
+region = Rect2(0, 32, 48, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jvgng"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jq5r5")
+}],
+"loop": false,
+"name": &"closed",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w7u3r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3e6t3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x6pyf")
+}],
+"loop": false,
+"name": &"opened",
+"speed": 2.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jucfp"]
+size = Vector2(16, 16)
+
+[node name="Barriere" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_jvgng")
+animation = &"closed"
+
+[node name="Static" type="StaticBody2D" parent="."]
+
+[node name="left" type="CollisionShape2D" parent="Static"]
+position = Vector2(-16, 0)
+shape = SubResource("RectangleShape2D_jucfp")
+
+[node name="right" type="CollisionShape2D" parent="Static"]
+position = Vector2(16, 0)
+shape = SubResource("RectangleShape2D_jucfp")
+
+[node name="Temporary" type="StaticBody2D" parent="."]
+
+[node name="mid" type="CollisionShape2D" parent="Temporary"]
+shape = SubResource("RectangleShape2D_jucfp")
