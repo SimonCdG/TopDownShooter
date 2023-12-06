@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dctytmrotrwli"]
+
+[ext_resource type="PackedScene" uid="uid://dhqdjwuowbkx1" path="res://Scenes/Mechanisms/barriere.tscn" id="1_gopia"]
+[ext_resource type="Script" path="res://Scripts/TimedBarriere.gd" id="2_60y31"]
+
+[node name="Timed Barriere" instance=ExtResource("1_gopia")]
+script = ExtResource("2_60y31")
+trigger = 0
+chronoTime = 0.0
+
+[node name="Timer" type="Timer" parent="." index="3"]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
