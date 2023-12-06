@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cqutsfe1osyju"]
+[gd_scene load_steps=10 format=3 uid="uid://cqutsfe1osyju"]
 
 [ext_resource type="PackedScene" uid="uid://bipndm6qw2nb1" path="res://Scenes/Levels/world.tscn" id="1_31dkd"]
 [ext_resource type="Script" path="res://Scripts/Outside.gd" id="2_mm2ey"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bk2mv740f3uh7" path="res://Scenes/Mechanisms/gate.tscn" id="5_kmo8o"]
 [ext_resource type="PackedScene" uid="uid://dp8gfqrvygif6" path="res://Scenes/Mechanisms/crate.tscn" id="7_dfkl2"]
 [ext_resource type="PackedScene" uid="uid://dqvkkinvlax7v" path="res://Scenes/Enemies/ghost.tscn" id="7_fw4nf"]
+[ext_resource type="PackedScene" uid="uid://dhqdjwuowbkx1" path="res://Scenes/Mechanisms/barriere.tscn" id="8_m1hqp"]
 
 [node name="Outside" instance=ExtResource("1_31dkd")]
 script = ExtResource("2_mm2ey")
@@ -43,6 +44,10 @@ position = Vector2(224, 112)
 [node name="Chest" parent="Props" index="2" instance=ExtResource("5_6heht")]
 position = Vector2(176, -24)
 
+[node name="Barriere" parent="Props" index="3" instance=ExtResource("8_m1hqp")]
+position = Vector2(168, -232)
+trigger = 2
+
 [node name="Ghost" parent="Enemies" index="0" instance=ExtResource("7_fw4nf")]
 position = Vector2(96, -184)
 
@@ -52,3 +57,6 @@ position = Vector2(216, -152)
 [node name="Player" parent="." index="6"]
 position = Vector2(174, 128)
 collision_mask = 17
+
+[connection signal="triggerSignal" from="Enemies/Ghost" to="Props/Barriere" method="_on_trigger_signal"]
+[connection signal="triggerSignal" from="Enemies/Ghost2" to="Props/Barriere" method="_on_trigger_signal"]

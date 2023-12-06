@@ -1,7 +1,6 @@
 class_name Player
 extends CharacterBody2D
 
-
 var direction: Vector2
 var canSwingAxe: bool = true
 var canFireBolt: bool = true

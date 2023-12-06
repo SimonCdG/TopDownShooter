@@ -1,11 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://cp6j76mqb8ev8"]
+[gd_scene load_steps=8 format=3 uid="uid://cp6j76mqb8ev8"]
 
 [ext_resource type="PackedScene" uid="uid://bipndm6qw2nb1" path="res://Scenes/Levels/world.tscn" id="1_6e0ou"]
 [ext_resource type="TileSet" uid="uid://0oa7e3pl5ehv" path="res://Tilemaps/kenney.tres" id="2_pd0hy"]
 [ext_resource type="PackedScene" uid="uid://dqvkkinvlax7v" path="res://Scenes/Enemies/ghost.tscn" id="3_ovl6j"]
 [ext_resource type="Texture2D" uid="uid://do3vcvlavl4qs" path="res://Sprites/tile_0040.png" id="3_ubnjv"]
 [ext_resource type="Texture2D" uid="uid://dl36iysyjx5ha" path="res://Sprites/tile_0002.png" id="4_c1u6v"]
-[ext_resource type="Texture2D" uid="uid://6bltxxidyk5m" path="res://Sprites/button.png" id="4_mxko2"]
+[ext_resource type="PackedScene" uid="uid://bl08v8kjkc3l6" path="res://Scenes/Mechanisms/button.tscn" id="4_w7wux"]
+[ext_resource type="PackedScene" uid="uid://dhqdjwuowbkx1" path="res://Scenes/Mechanisms/barriere.tscn" id="7_dqhhr"]
 
 [node name="World" instance=ExtResource("1_6e0ou")]
 
@@ -43,11 +44,13 @@ position = Vector2(-240, -96)
 position = Vector2(-312, -40)
 maxSpeed = 70.0
 
-[node name="Button" type="Sprite2D" parent="." index="5"]
-position = Vector2(-269, -521)
-texture = ExtResource("4_mxko2")
+[node name="Barriere" parent="." index="5" instance=ExtResource("7_dqhhr")]
+position = Vector2(-269, -586)
 
-[node name="Faux mur" type="Sprite2D" parent="." index="6"]
+[node name="Button" parent="." index="6" instance=ExtResource("4_w7wux")]
+position = Vector2(-269, -521)
+
+[node name="Faux mur" type="Sprite2D" parent="." index="7"]
 position = Vector2(-269, -450)
 texture = ExtResource("3_ubnjv")
 
@@ -62,3 +65,5 @@ texture = ExtResource("4_c1u6v")
 [node name="Tile0004" type="Sprite2D" parent="Faux mur" index="2"]
 position = Vector2(-16, -16)
 texture = ExtResource("4_c1u6v")
+
+[connection signal="buttonPressed" from="Button" to="Barriere" method="_on_trigger_signal"]

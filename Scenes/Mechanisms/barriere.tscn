@@ -1,12 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://dhqdjwuowbkx1"]
 
 [ext_resource type="Texture2D" uid="uid://data5utb8w1ai" path="res://Sprites/openable barrier.png" id="1_48gth"]
+[ext_resource type="Script" path="res://Scripts/Barriere.gd" id="1_u33h1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jq5r5"]
-atlas = ExtResource("1_48gth")
-region = Rect2(0, 0, 48, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_w7u3r"]
 atlas = ExtResource("1_48gth")
 region = Rect2(0, 0, 48, 16)
 
@@ -30,9 +27,6 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_w7u3r")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_3e6t3")
 }, {
 "duration": 1.0,
@@ -47,12 +41,15 @@ animations = [{
 size = Vector2(16, 16)
 
 [node name="Barriere" type="Node2D"]
+script = ExtResource("1_u33h1")
+trigger = 1
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_jvgng")
 animation = &"closed"
 
 [node name="Static" type="StaticBody2D" parent="."]
+collision_mask = 2
 
 [node name="left" type="CollisionShape2D" parent="Static"]
 position = Vector2(-16, 0)
@@ -63,6 +60,7 @@ position = Vector2(16, 0)
 shape = SubResource("RectangleShape2D_jucfp")
 
 [node name="Temporary" type="StaticBody2D" parent="."]
+collision_mask = 2
 
 [node name="mid" type="CollisionShape2D" parent="Temporary"]
 shape = SubResource("RectangleShape2D_jucfp")
