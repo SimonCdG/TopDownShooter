@@ -8,13 +8,13 @@
 [ext_resource type="PackedScene" uid="uid://bk2mv740f3uh7" path="res://Scenes/Mechanisms/gate.tscn" id="5_kmo8o"]
 [ext_resource type="PackedScene" uid="uid://dp8gfqrvygif6" path="res://Scenes/Mechanisms/crate.tscn" id="7_dfkl2"]
 [ext_resource type="PackedScene" uid="uid://dqvkkinvlax7v" path="res://Scenes/Enemies/ghost.tscn" id="7_fw4nf"]
-[ext_resource type="PackedScene" uid="uid://dhqdjwuowbkx1" path="res://Scenes/Mechanisms/barriere.tscn" id="9_882hh"]
+[ext_resource type="PackedScene" uid="uid://dhqdjwuowbkx1" path="res://Scenes/Mechanisms/barriere.tscn" id="8_m1hqp"]
 
 [node name="Outside" instance=ExtResource("1_31dkd")]
 script = ExtResource("2_mm2ey")
 
 [node name="Dirt" type="Sprite2D" parent="." index="0"]
-position = Vector2(-64, -8)
+position = Vector2(40, 32)
 texture = ExtResource("2_v8ki4")
 region_enabled = true
 region_rect = Rect2(0, 0, 2000, 2000)
@@ -44,6 +44,10 @@ position = Vector2(224, 112)
 [node name="Chest" parent="Props" index="2" instance=ExtResource("5_6heht")]
 position = Vector2(176, -24)
 
+[node name="Barriere" parent="Props" index="3" instance=ExtResource("8_m1hqp")]
+position = Vector2(168, -232)
+trigger = 2
+
 [node name="Ghost" parent="Enemies" index="0" instance=ExtResource("7_fw4nf")]
 position = Vector2(96, -184)
 
@@ -54,9 +58,5 @@ position = Vector2(216, -152)
 position = Vector2(174, 128)
 collision_mask = 17
 
-[node name="Barriere" parent="." index="8" instance=ExtResource("9_882hh")]
-position = Vector2(168, -240)
-trigger = 2
-
-[connection signal="triggerSignal" from="Enemies/Ghost" to="Barriere" method="_on_ghost_trigger_signal"]
-[connection signal="triggerSignal" from="Enemies/Ghost2" to="Barriere" method="_on_ghost_trigger_signal"]
+[connection signal="triggerSignal" from="Enemies/Ghost" to="Props/Barriere" method="_on_trigger_signal"]
+[connection signal="triggerSignal" from="Enemies/Ghost2" to="Props/Barriere" method="_on_trigger_signal"]
