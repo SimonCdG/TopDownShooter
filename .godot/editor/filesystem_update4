@@ -1,4 +1,5 @@
-res://Scenes/Levels/inside.tscn
-res://Tilemaps/kenney.tres
 res://Scenes/Levels/montagne.tscn
+res://Tilemaps/kenney.tres
+res://Tilemaps/montagne.tres
+res://Scenes/Levels/inside.tscn
 res://Scenes/Enemies/ghost.tscn
