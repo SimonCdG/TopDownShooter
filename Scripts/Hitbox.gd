@@ -16,5 +16,5 @@ func damages_calculation(body, damagesDealt:int):
 		damagesDealt *= 2
 		
 	body.hit(global_position, damagesDealt)
-	print(damagesDealt)
+	#print(damagesDealt)
 	damagesDealt = baseDamages

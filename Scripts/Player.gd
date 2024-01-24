@@ -28,7 +28,7 @@ func _init():
 
 
 func _process(delta):
-	
+	Globals.playerposition = position
 	if canMove:
 		direction = Input.get_vector("left", "right", "up", "down")
 	else:

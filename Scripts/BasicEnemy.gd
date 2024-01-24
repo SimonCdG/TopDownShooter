@@ -13,10 +13,13 @@ signal triggerSignal
 @onready var deathScene: PackedScene = preload("res://Scenes/Effects/death_effect.tscn")
 
 var direction: Vector2
+var vue: bool = false
 
 func _physics_process(delta):
 	
 	direction = lerp(direction, Vector2.ZERO, 10 * delta)
+	if vue:
+		direction = (Globals.playerposition - position).normalized()
 	
 	velocity = direction * maxSpeed
 	move_and_slide()
@@ -52,3 +55,11 @@ func hit(hitPosition: Vector2, damage: int):
 		triggerSignal.emit()
 		
 		queue_free()
+
+
+func _on_vue_body_entered(body):
+	vue = true
+
+
+func _on_nomorelook_body_exited(body):
+	vue = false

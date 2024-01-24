@@ -17,6 +17,6 @@ var moneyAmount: int:
 	set(value):
 		moneyAmount = value
 		money_updated.emit()
-
+var playerposition: Vector2
 func _ready():
 	Globals.playerHealth = Globals.playerMaxHealth

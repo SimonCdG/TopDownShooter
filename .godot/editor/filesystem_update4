@@ -1,4 +1,9 @@
-res://Scenes/Levels/inside.tscn
-res://Tilemaps/kenney.tres
-res://Scenes/Levels/montagne.tscn
+res://Scripts/BasicEnemy.gd
 res://Scenes/Enemies/ghost.tscn
+res://Tilemaps/kenney.tres
+res://Tilemaps/montagne.tres
+res://Scenes/Levels/inside.tscn
+res://Scenes/Levels/montagne.tscn
+res://Scripts/Hitbox.gd
+res://Scripts/Globals.gd
+res://Scripts/Player.gd

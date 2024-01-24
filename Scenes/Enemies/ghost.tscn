@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dqvkkinvlax7v"]
+[gd_scene load_steps=8 format=3 uid="uid://dqvkkinvlax7v"]
 
 [ext_resource type="Script" path="res://Scripts/BasicEnemy.gd" id="1_uw1qi"]
 [ext_resource type="Texture2D" uid="uid://c47ahucxvcb7o" path="res://Sprites/tile_0121.png" id="2_y4m2k"]
@@ -10,6 +10,12 @@ size = Vector2(16, 15)
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3saxy"]
 radius = 5.0
 height = 14.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_eqqyy"]
+radius = 14.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_reigk"]
+radius = 35.0
 
 [node name="Ghost" type="CharacterBody2D"]
 collision_layer = 4
@@ -32,5 +38,22 @@ shape = SubResource("RectangleShape2D_n8eck")
 [node name="CollisionShape2D" parent="EnemyHitbox" index="0"]
 position = Vector2(0, 1)
 shape = SubResource("CapsuleShape2D_3saxy")
+
+[node name="Vue" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Vue"]
+shape = SubResource("CircleShape2D_eqqyy")
+
+[node name="Nomorelook" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Nomorelook"]
+shape = SubResource("CircleShape2D_reigk")
+
+[connection signal="body_entered" from="Vue" to="." method="_on_vue_body_entered"]
+[connection signal="body_exited" from="Nomorelook" to="." method="_on_nomorelook_body_exited"]
 
 [editable path="EnemyHitbox"]

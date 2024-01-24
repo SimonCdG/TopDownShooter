@@ -38,6 +38,8 @@ position = Vector2(-344, -424)
 monitoring = false
 monitorable = false
 
+[node name="LevelExit" parent="." index="6" instance=ExtResource("3_66jd4")]
+
 [node name="Ghost" parent="Enemies" index="0" instance=ExtResource("4_hcd8b")]
 position = Vector2(0, -80)
 
@@ -62,7 +64,5 @@ position = Vector2(-352, -304)
 [node name="Ghost8" parent="Enemies" index="7" instance=ExtResource("4_hcd8b")]
 position = Vector2(-336, -384)
 
-[node name="LevelExit" parent="." index="6" instance=ExtResource("3_66jd4")]
-
-[node name="Player" parent="." index="7"]
+[node name="Player" parent="." index="8"]
 collision_mask = 17
