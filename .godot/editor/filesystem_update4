@@ -1,15 +1,4 @@
-res://Scripts/Barriere.gd
-res://Scenes/Levels/outside.tscn
-res://Tilemaps/kenney.tres
-res://Scenes/Levels/world.tscn
-res://Scenes/UI/ui.tscn
-res://Scenes/Mechanisms/dropped_items.tscn
 res://Scenes/Levels/inside.tscn
-res://Scenes/Raphael/raph_castle1.tscn
-res://Scenes/Mechanisms/barriere.tscn
-res://Scenes/Mael/mael_castle1.tscn
-res://Scenes/Mechanisms/button.tscn
+res://Tilemaps/kenney.tres
+res://Scenes/Levels/montagne.tscn
 res://Scenes/Enemies/ghost.tscn
-res://Scripts/Player.gd
-res://Scripts/EnemyHitbox.gd
-res://Scenes/Player/player.tscn
