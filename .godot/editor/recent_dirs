@@ -1,3 +1,4 @@
+res://Scenes/Enemies
 res://Tilemaps
 res://Scenes/Levels
 res://Scripts
@@ -5,7 +6,6 @@ res://Scenes/Mechanisms
 res://Sprites
 res://Scenes/Mael
 res://Scenes/Raphael
-res://Scenes/Enemies
 res://Scenes/UI
 res://Scenes/Weapons
 res://Scenes/Effects

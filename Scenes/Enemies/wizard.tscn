@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://xdurnuqy4mdc"]
+
+[ext_resource type="Texture2D" uid="uid://bxedbi13afuo7" path="res://Sprites/tile_0111.png" id="1_ayf02"]
+[ext_resource type="PackedScene" uid="uid://bcr5glphs0om5" path="res://Scenes/Enemies/enemy_hitbox.tscn" id="2_qre58"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cc577"]
+size = Vector2(16, 16)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nc5mj"]
+radius = 5.0
+height = 14.0
+
+[node name="Wizard" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ayf02")
+
+[node name="WorldCollision" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_cc577")
+
+[node name="EnemyHitbox" parent="." instance=ExtResource("2_qre58")]
+
+[node name="CollisionShape2D" parent="EnemyHitbox" index="0"]
+position = Vector2(0, 1)
+shape = SubResource("CapsuleShape2D_nc5mj")
+
+[editable path="EnemyHitbox"]

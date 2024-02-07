@@ -41,7 +41,7 @@ monitorable = false
 [node name="LevelExit" parent="." index="6" instance=ExtResource("3_66jd4")]
 
 [node name="Ghost" parent="Enemies" index="0" instance=ExtResource("4_hcd8b")]
-position = Vector2(0, -80)
+position = Vector2(0, -104)
 
 [node name="Ghost2" parent="Enemies" index="1" instance=ExtResource("4_hcd8b")]
 position = Vector2(64, -288)
