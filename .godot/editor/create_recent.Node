@@ -1,3 +1,4 @@
+Timer
 CollisionShape2D
 Area2D
 TileMap
@@ -10,7 +11,6 @@ Label
 Control
 TextureRect
 AnimationPlayer
-Timer
 ColorRect
 CanvasLayer
 ProgressBar

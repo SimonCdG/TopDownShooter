@@ -12,12 +12,13 @@ radius = 5.0
 height = 14.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_eqqyy"]
-radius = 14.0
+radius = 79.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_reigk"]
-radius = 35.0
+radius = 78.0577
 
 [node name="Ghost" type="CharacterBody2D"]
+position = Vector2(0, 1)
 collision_layer = 4
 collision_mask = 9
 script = ExtResource("1_uw1qi")
@@ -53,7 +54,12 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Nomorelook"]
 shape = SubResource("CircleShape2D_reigk")
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.25
+one_shot = true
+
 [connection signal="body_entered" from="Vue" to="." method="_on_vue_body_entered"]
 [connection signal="body_exited" from="Nomorelook" to="." method="_on_nomorelook_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 
 [editable path="EnemyHitbox"]
