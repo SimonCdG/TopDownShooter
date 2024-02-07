@@ -1,3 +1,14 @@
-res://Tilemaps/kenney.tres
-res://Tilemaps/montagne.tres
 res://Scenes/Enemies/wizard.tscn
+res://Scripts/EnemyWizard.gd
+res://Scripts/States/State.gd
+res://Scripts/States/EnemyStateMachine.gd
+res://Scripts/States/EnemyStateIdle.gd
+res://Scripts/States/EnemyStateWander.gd
+res://Scenes/Levels/outside.tscn
+res://Tilemaps/kenney.tres
+res://Scenes/Levels/world.tscn
+res://Scenes/Player/player.tscn
+res://Scripts/States/EnemyStateChase.gd
+res://Scripts/Player.gd
+res://Scenes/Enemies/ghost.tscn
+res://Scripts/EnemyHitbox.gd
