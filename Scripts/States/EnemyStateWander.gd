@@ -29,4 +29,4 @@ func Physics_Update(_delta:float):
 
 func randomize_wander():
 	moveDirection = Vector2(randf_range(-1, 1), randf_range(-1, 1)).normalized()
-	wanderTime = randf_range(1, 3)
+	wanderTime = randf_range(1, 2)

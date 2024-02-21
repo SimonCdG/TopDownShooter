@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://xdurnuqy4mdc"]
+[gd_scene load_steps=11 format=3 uid="uid://xdurnuqy4mdc"]
 
 [ext_resource type="Texture2D" uid="uid://bxedbi13afuo7" path="res://Sprites/tile_0111.png" id="1_ayf02"]
 [ext_resource type="Script" path="res://Scripts/EnemyWizard.gd" id="1_cnts3"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://Scripts/States/EnemyStateIdle.gd" id="5_ow32b"]
 [ext_resource type="Script" path="res://Scripts/States/EnemyStateWander.gd" id="6_ywgnb"]
 [ext_resource type="Script" path="res://Scripts/States/EnemyStateChase.gd" id="7_tpylg"]
+[ext_resource type="Script" path="res://Scripts/States/EnemyHurtState.gd" id="8_bsaep"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cc577"]
 size = Vector2(16, 16)
@@ -19,6 +20,7 @@ height = 14.0
 collision_layer = 4
 collision_mask = 9
 script = ExtResource("1_cnts3")
+damages = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_ayf02")
@@ -47,5 +49,8 @@ enemy = NodePath("../..")
 [node name="EnemyChase" type="Node" parent="StateMachine" node_paths=PackedStringArray("enemy")]
 script = ExtResource("7_tpylg")
 enemy = NodePath("../..")
+
+[node name="EnemyHurt" type="Node" parent="StateMachine"]
+script = ExtResource("8_bsaep")
 
 [editable path="EnemyHitbox"]

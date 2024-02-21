@@ -4,9 +4,9 @@ extends Area2D
 func damages_calculation(body, damagesDealt:int):
 	var baseDamages = damagesDealt
 	var diceRoll = randf()
-	if diceRoll < .1:
+	if diceRoll < 0.1:
 		damagesDealt = int(damagesDealt * 0.6)
-	elif diceRoll < .4:
+	elif diceRoll < 0.4:
 		damagesDealt = int(damagesDealt * 0.8)
 	elif diceRoll < .7:
 		pass
@@ -16,5 +16,4 @@ func damages_calculation(body, damagesDealt:int):
 		damagesDealt *= 2
 		
 	body.hit(global_position, damagesDealt)
-	print(damagesDealt)
 	damagesDealt = baseDamages

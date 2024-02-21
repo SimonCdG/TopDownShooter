@@ -1,5 +1,6 @@
 extends Node
 
+
 @export var current_state: State
 var states: Dictionary = {}
 
@@ -19,6 +20,8 @@ func _physics_process(delta):
 		current_state.Physics_Update(delta)
 
 func on_child_transition(_newState):
+	
+	current_state.Exit()
 	
 	if states.get(_newState):
 		current_state = states.get(_newState)

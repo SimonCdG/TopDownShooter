@@ -10,6 +10,9 @@ func Enter():
 	randomize_idle()
 	player = get_tree().get_first_node_in_group("Player")
 
+func Exit():
+	enemy.velocity = Vector2.ZERO
+
 func randomize_idle():
 	idleTime = randf_range(2, 3)
 

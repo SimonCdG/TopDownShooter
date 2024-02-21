@@ -1,8 +1,9 @@
+EnemyHurt
 EnemyChase
-Area2D
-CollisionShape2D
 EnemyWander
 EnemyIdle
+Area2D
+CollisionShape2D
 Node
 Sprite2D
 CharacterBody2D
