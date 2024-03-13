@@ -1,7 +1,6 @@
 extends Hitbox
+class_name Attack
 
-@export var damages: int = 1
-
-func _on_body_entered(body):
-	if "hit" in body:
-		damages_calculation(body, damages)
+@export var damages: int
+@export var kbForce: int
+var attackPosition: Vector2

@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://ypq00l1lofos"]
+
+[ext_resource type="PackedScene" uid="uid://cx842odroaot7" path="res://Scenes/Enemies/enemy.tscn" id="1_54jth"]
+[ext_resource type="Texture2D" uid="uid://b08mjgoe7eobs" path="res://Sprites/big_knight.png" id="2_ibw5q"]
+[ext_resource type="Texture2D" uid="uid://dvrooj12p08l7" path="res://Sprites/shield.png" id="3_2t354"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uyu05"]
+size = Vector2(28, 30)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_edsbd"]
+height = 28.0
+
+[node name="BigKnight" instance=ExtResource("1_54jth")]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_ibw5q")
+
+[node name="ShieldSprite" type="Sprite2D" parent="Sprite2D" index="0"]
+position = Vector2(-6, 8)
+texture = ExtResource("3_2t354")
+
+[node name="WorldCollision" parent="." index="1"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_uyu05")
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0"]
+position = Vector2(0, 2)
+shape = SubResource("CapsuleShape2D_edsbd")

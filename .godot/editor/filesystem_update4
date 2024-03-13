@@ -1,11 +1,1 @@
-res://Scenes/Levels/outside.tscn
-res://Tilemaps/kenney.tres
-res://Scenes/Enemies/wizard.tscn
-res://Scenes/Enemies/ghost.tscn
 res://Scenes/Player/player.tscn
-res://Scripts/States/EnemyHurtState.gd
-res://Scripts/States/State.gd
-res://Scripts/EnemyWizard.gd
-res://Scripts/Hitbox.gd
-res://Scripts/States/EnemyStateChase.gd
-res://Scripts/States/EnemyStateIdle.gd

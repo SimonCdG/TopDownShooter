@@ -1,8 +1,8 @@
-res://Scripts/States
-res://Scripts
 res://Scenes/Enemies
-res://Tilemaps
+res://Scripts
 res://Scenes/Levels
+res://Scripts/States
+res://Tilemaps
 res://Scenes/Mechanisms
 res://Sprites
 res://Scenes/Mael

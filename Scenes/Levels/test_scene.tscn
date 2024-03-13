@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://dadtk0sr3601m"]
+
+[ext_resource type="PackedScene" uid="uid://bipndm6qw2nb1" path="res://Scenes/Levels/world.tscn" id="1_hqodl"]
+[ext_resource type="PackedScene" uid="uid://ypq00l1lofos" path="res://Scenes/Enemies/big_knight.tscn" id="2_tcbb2"]
+
+[node name="TestScene" instance=ExtResource("1_hqodl")]
+
+[node name="BigKnight" parent="Enemies" index="0" instance=ExtResource("2_tcbb2")]
+position = Vector2(72, -8)

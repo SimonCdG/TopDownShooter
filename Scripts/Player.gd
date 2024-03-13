@@ -104,3 +104,10 @@ func _on_axe_swing_timeout():
 
 func _on_control_timer_timeout():
 	canMove = true
+
+
+func _on_axe_body_entered(body):
+	if "hit" in body:
+		body.hit()
+
+
