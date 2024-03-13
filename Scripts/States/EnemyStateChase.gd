@@ -1,26 +1,25 @@
 extends State
 class_name  EnemyChase
 
-@export var enemy:CharacterBody2D
-@export var moveSpeed := 50.0
-@export var releaseDistance := 50.0
 var player:CharacterBody2D
 
-var moveDirection: Vector2
+var moveDirection : Vector2
 
 func Enter():
-	player = get_tree().get_first_node_in_group("Player")
+	if !hasEntered:
+		player = get_tree().get_first_node_in_group("Player")
+		hasEntered = true
 
 func Exit():
 	enemy.velocity = Vector2.ZERO
 
 func Update(_delta:float):
-	var playerDistance = (player.position - enemy.position).length()
-	moveDirection = (player.position - enemy.position).normalized()
-	
+	var enemyPosition = enemy.position
+	moveDirection = enemyPosition.direction_to(player.position)
+	var playerDistance = enemy.position.distance_to(player.position)
 	if playerDistance > 200:
-		transitioned.emit("EnemyIdle")
+		transitioned.emit()
 
 func Physics_Update(_delta:float):
 	if enemy:
-		enemy.velocity = moveDirection * moveSpeed
+		enemy.velocity = moveDirection * enemy.max_speed

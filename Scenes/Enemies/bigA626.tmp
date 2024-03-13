@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://ypq00l1lofos"]
+[gd_scene load_steps=9 format=3 uid="uid://ypq00l1lofos"]
 
 [ext_resource type="PackedScene" uid="uid://cx842odroaot7" path="res://Scenes/Enemies/enemy.tscn" id="1_54jth"]
 [ext_resource type="Texture2D" uid="uid://b08mjgoe7eobs" path="res://Sprites/big_knight.png" id="2_ibw5q"]
@@ -6,23 +6,17 @@
 [ext_resource type="Texture2D" uid="uid://dvrooj12p08l7" path="res://Sprites/shield.png" id="3_2t354"]
 [ext_resource type="Script" path="res://Scripts/States/EnemyStateIdle.gd" id="5_nmahp"]
 [ext_resource type="Script" path="res://Scripts/States/EnemyStateWander.gd" id="6_v5iia"]
-[ext_resource type="Script" path="res://Scripts/States/EnemyStateChase.gd" id="7_f786k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uyu05"]
 size = Vector2(28, 30)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_edsbd"]
-radius = 12.0
-height = 34.0
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_88brn"]
+height = 28.0
 
 [node name="BigKnight" instance=ExtResource("1_54jth")]
 script = ExtResource("2_u4s5o")
 health = 30
-max_speed = 40
-aggro_range = 100
-release_range = 120
+max_speed = 60
 knockback_resistance = 30
 damages_resistance = 50
 damages = 5.0
@@ -42,19 +36,11 @@ shape = SubResource("RectangleShape2D_uyu05")
 position = Vector2(0, 2)
 shape = SubResource("CapsuleShape2D_edsbd")
 
-[node name="CollisionShape2D2" parent="EnemyHitbox" index="1"]
-position = Vector2(0, 2)
-shape = SubResource("CapsuleShape2D_88brn")
-
 [node name="EnemyIdle" type="Node" parent="States" index="0"]
 script = ExtResource("5_nmahp")
 
 [node name="EnemyWander" type="Node" parent="States" index="1"]
 script = ExtResource("6_v5iia")
 
-[node name="EnemyChase" type="Node" parent="States" index="2"]
-script = ExtResource("7_f786k")
-
 [connection signal="transitioned" from="States/EnemyIdle" to="." method="_on_enemy_idle_transitioned"]
 [connection signal="transitioned" from="States/EnemyWander" to="." method="_on_enemy_wander_transitioned"]
-[connection signal="transitioned" from="States/EnemyChase" to="." method="_on_enemy_chase_transitioned"]

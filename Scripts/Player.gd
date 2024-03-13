@@ -108,6 +108,6 @@ func _on_control_timer_timeout():
 
 func _on_axe_body_entered(body):
 	if "hit" in body:
-		body.hit()
+		body.hit(position, axe.damages)
 
 

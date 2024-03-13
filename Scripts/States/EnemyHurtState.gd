@@ -1,6 +1,5 @@
 extends State
 class_name EnemyHurt
-@export var enemy:CharacterBody2D
 var player:CharacterBody2D
 
 func Enter():

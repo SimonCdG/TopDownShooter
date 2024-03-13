@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dp8gfqrvygif6" path="res://Scenes/Mechanisms/crate.tscn" id="7_dfkl2"]
 [ext_resource type="PackedScene" uid="uid://dqvkkinvlax7v" path="res://Scenes/Enemies/ghost.tscn" id="7_fw4nf"]
 [ext_resource type="PackedScene" uid="uid://dhqdjwuowbkx1" path="res://Scenes/Mechanisms/barriere.tscn" id="8_m1hqp"]
-[ext_resource type="PackedScene" uid="uid://xdurnuqy4mdc" path="res://Scenes/Enemies/wizard.tscn" id="10_hq3lg"]
+[ext_resource type="PackedScene" uid="uid://ypq00l1lofos" path="res://Scenes/Enemies/big_knight.tscn" id="10_flxj5"]
 
 [node name="Outside" instance=ExtResource("1_31dkd")]
 script = ExtResource("2_mm2ey")
@@ -55,8 +55,8 @@ position = Vector2(96, -184)
 [node name="Ghost2" parent="Enemies" index="1" instance=ExtResource("7_fw4nf")]
 position = Vector2(216, -152)
 
-[node name="Wizard" parent="Enemies" index="2" instance=ExtResource("10_hq3lg")]
-position = Vector2(80, 80)
+[node name="BigKnight" parent="Enemies" index="2" instance=ExtResource("10_flxj5")]
+position = Vector2(72, 96)
 
 [node name="Player" parent="." index="7"]
 position = Vector2(174, 128)
