@@ -1,3 +1,8 @@
 res://Scenes/Levels/outside.tscn
+res://Scripts/States/StateMachine.gd
 res://Tilemaps/kenney.tres
 res://Tilemaps/montagne.tres
+res://Scenes/Levels/montagne.tscn
+res://Scenes/Player/player.tscn
+res://Scenes/Levels/inside.tscn
+res://Scripts/States/Player/MovePlayerState.gd

@@ -1,10 +1,13 @@
-[gd_scene load_steps=15 format=3 uid="uid://b2un2gfk3e4qy"]
+[gd_scene load_steps=18 format=3 uid="uid://b2un2gfk3e4qy"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_wk14x"]
 [ext_resource type="Script" path="res://Scenes/Player/MeleeWeapon.gd" id="2_0eknj"]
 [ext_resource type="Texture2D" uid="uid://d1od1wrnwtfv5" path="res://Sprites/tile_0087.png" id="2_eklvq"]
 [ext_resource type="Texture2D" uid="uid://dkxtytbc6e6dk" path="res://Sprites/tile_0118.png" id="2_x7plf"]
 [ext_resource type="Texture2D" uid="uid://brgjwjaa4uo5n" path="res://Textures/slash.png" id="3_bfr8q"]
+[ext_resource type="Script" path="res://Scripts/States/StateMachine.gd" id="6_frh6u"]
+[ext_resource type="Script" path="res://Scripts/States/Player/IdlePlayerState.gd" id="7_5r1w4"]
+[ext_resource type="Script" path="res://Scripts/States/Player/MovePlayerState.gd" id="8_13wdm"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_c51dx"]
 radius = 9.0
@@ -106,7 +109,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("WarriorSprite:scale")
+tracks/0/path = NodePath("Sprite2D:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -118,7 +121,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("WarriorSprite:rotation")
+tracks/1/path = NodePath("Sprite2D:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -133,7 +136,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("WarriorSprite:rotation")
+tracks/0/path = NodePath("Sprite2D:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -145,7 +148,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("WarriorSprite:scale")
+tracks/1/path = NodePath("Sprite2D:scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -163,7 +166,7 @@ step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("WarriorSprite:rotation")
+tracks/0/path = NodePath("Sprite2D:rotation")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -175,7 +178,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("WarriorSprite:scale")
+tracks/1/path = NodePath("Sprite2D:scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -229,7 +232,7 @@ libraries = {
 "": SubResource("AnimationLibrary_8gm08")
 }
 
-[node name="WarriorSprite" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, 6)
 texture = ExtResource("2_eklvq")
 offset = Vector2(0, -7)
@@ -255,6 +258,17 @@ speed_scale = 1.5
 libraries = {
 "": SubResource("AnimationLibrary_818py")
 }
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state", "states")]
+script = ExtResource("6_frh6u")
+initial_state = NodePath("IdleState")
+states = [NodePath("IdleState")]
+
+[node name="IdleState" type="Node" parent="StateMachine"]
+script = ExtResource("7_5r1w4")
+
+[node name="MoveState" type="Node" parent="StateMachine"]
+script = ExtResource("8_13wdm")
 
 [connection signal="body_entered" from="Axe" to="Axe" method="_on_body_entered"]
 [connection signal="timeout" from="AxeSwing" to="." method="_on_axe_swing_timeout"]

@@ -3,6 +3,10 @@ extends Node
 signal health_updated
 signal money_updated
 
+# STATES
+const IDLE = "IDLE"
+const MOVE = "MOVE"
+
 var playerMaxHealth: int
 var playerHealth: int:
 	get:

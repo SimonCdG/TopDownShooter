@@ -10,7 +10,7 @@ var canMove: bool = true
 @export var maxHealth: int = 15
 @export var knockback: int = 20
 
-@onready var sprite: Sprite2D = $WarriorSprite
+@onready var sprite: Sprite2D = $Sprite2D
 @onready var axe: Area2D = $Axe
 @onready var axePivot: Marker2D = $Axe/AxePivot
 @onready var axeSprite: Sprite2D = $Axe/AxePivot/AxeSprite
@@ -26,6 +26,9 @@ signal healthUpdated()
 func _init():
 	Globals.playerMaxHealth = maxHealth
 
+func _ready():
+	set_process(false)
+	set_physics_process(false)
 
 func _process(delta):
 	
